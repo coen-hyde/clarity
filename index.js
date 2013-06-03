@@ -85,6 +85,8 @@ Clarity.prototype.deepDecode = function(input) {
         return input;
     }
     
+    var clarity = this;
+    
     // If input is an array. Then return an array with it's elements deep copied.
     if (input instanceof Array) {
         var copyArray = [];
@@ -97,7 +99,6 @@ Clarity.prototype.deepDecode = function(input) {
 
     // iterate through the keys within the object
     // and return the decoded value
-    var clarity = this;
     Object.keys(input).forEach(function(key) {
         if (hasOwn.call(input, key)) {
             clone[key] = clarity.deepDecode(input[key]);

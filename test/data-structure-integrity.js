@@ -1,12 +1,13 @@
 var assert = require('assert'),
-    clarity = require('..'),
+    Clarity = require('..'),
+    clarity,
     testData = {
       name: 'test'
     };
 
 describe('data integrity', function() {
     before(function() {
-      clarity.clear();
+      clarity = new Clarity();
       clarity.use(testData);
     });
 
